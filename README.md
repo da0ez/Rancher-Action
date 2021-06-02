@@ -15,19 +15,18 @@ jobs:
     steps:
       - name: Rancher Action
         uses: colbyhill21/Rancher-Action@1.1
-        with: 
+        with:
           args: '"get pods"'
           token: ${{ secrets.RANCHER_TOKEN }}
           context: ${{ secrets.RANCHER_CONTEXT }}
           url: ${{ secrets.RANCHER_URL }}
 ```
-          
+
 ## Inputs
 
 - `token`: Rancher Token for logging in.
-- `context`: Context of the project to access. (AKA Project ID)
+- `clusterid`: Cluseter ID to access.
 - `url`: URL of the Rancher instance.
-- `args`: Command you want to run. 
 
 ## License
 Scripts and documentation in this project are released under the MIT license.
