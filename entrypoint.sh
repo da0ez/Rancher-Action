@@ -1,8 +1,8 @@
 #!/bin/sh -l
 
 token="$INPUT_TOKEN"
-context="$INPUT_CONTEXT"
 url="$INPUT_URL"
+clusterid="$INPUT_CLUSTER"
 
+context=$(./rancherctl --rancher-url $url --cluster $clusterid --token $token ls | grep Default | awk '{print $1}')
 rancher login --token $token --context $context $url
-rancher kubectl $*
